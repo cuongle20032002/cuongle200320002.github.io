@@ -32,10 +32,11 @@ button:hover {
 }
 
 @media only screen and (max-width: 600px){
-h1{font-size: 1em;
+  /* Ví không giảm font size nội dung nữa nên tăng font size heading lên 1 chút */
+h1{font-size: 1.5em;
  
   margin: 30px 0px;
   }
-p{font-size: 0.6em;}
+/* Ở màn hình size nhỏ mà giảm font size của nội dung sẽ rất khó đọc */
 }
 
