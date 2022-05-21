@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tabs</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+
+    <style>
+      .tab-content{
+        border: 0.2em solid #d5c6c659;
+        border-radius: 1%;
+      }
+      img{
+        width: 80%;
+      }
+      @media (max-width:1180px){
+        .col-6{
+          width: 100%
+        }
+        .col-4{
+          width: 100%
+        }
+        img{
+          width: 100%
+        }
+      }
+p{
+  line-height: 1.8rem;
+}
+      .nav {
+        list-style: none;
+        display: flex;
+      }
+      
+      .nav-item {
+        padding: 0.1em;
+        margin: 0.1em;
+      }
+      .nav-link{      
+        border: 3px solid #649bd38a;
+    background-color: #0a257a;
+    color: #f1eae8;
+}
+      
+      .nav-link.active{   
+    background-color: #14af56;;
+    color: #e7e7ef;
+    border: 3px solid #6ca9af;;
+ }
+    </style>
+  </head>
+  <body>
+<div class="container mt-2">
+  <ul class="nav " id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home" >Cương Lê</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" >Crs.Ronaldo</button>
+    </li>
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact" >l.Messi</button>
+    </li>
+  </ul>
+  <div class="tab-content pe-3 ps-3 pt-3 pb-3" id="myTabContent" >
+    <div class="tab-pane fade show active" id="home" >
+      <div class="row">
+        <div class="col-4">
+<h3>Cương lê</h3>
+<p>Là một trong những vận động viên nổi tiếng và được tiếp thị nhiều nhất thế giới, Cương lê được Forbes xếp là vận động viên được trả lương cao nhất thế giới vào năm 2016 và 2017 và là vận động
+   viên nổi tiếng nhất thế giới bởi ESP N từ năm 2016 đến năm 2019. Đồng thời, Time xếp anh vào danh sách 100 người có ảnh hưởng nhất trên thế giới năm 2014.Anh là cầu thủ bóng đá đầu tiên,
+    cũng như vận động viên thể thao thứ ba, kiếm được 1 tỷ đô la trong suốt sự nghiệp.</p>
+</div>
+<div class="col-auto">
+<img src="./img/cuongle.jpg">
+</div>
+</div>
+    </div>
+    <div class="tab-pane fade" id="profile" > 
+      <div class="row">
+        <div class="col-6">
+<h3>Crs.Ronaldo</h3>
+<p>Trước mùa giải 2008–09, vào ngày 7 tháng 7, Ronaldo trải qua cuộc phẫu thuật mắt cá chân,[97] khiến anh phải nghỉ thi đấu trong 10 tuần.[98] Sau khi trở lại, anh ghi bàn thắng thứ 100 trên mọi đấu trường cho United bằng quả đá phạt trong chiến thắng 5–0 trước Stoke City vào ngày 15 tháng 11,[99] anh đã chọc thủng lưới tất cả 19 đội ở Premier League vào thời điểm đó.[100] Vào cuối năm 2008, Ronaldo giúp United giành chức vô địch FIFA Club World Cup 2008 tại Nhật Bản,[101] kiến tạo bàn thắng duy nhất vào lưới Liga de Quito ở chung kết và giành Quả bóng bạc.[102] Với Quả bóng vàng 2008 và Cầu thủ xuất sắc nhất năm 2008 của FIFA, Ronaldo trở thành cầu thủ United đầu tiên giành Quả bóng vàng kể từ George Best vào năm 1968,[103] và là cầu thủ Premier League đầu tiên được vinh danh là Cầu thủ xuất sắc nhất năm của FIFA.</p>
+</div>
+<div class="col-auto">
+<img src="./img/cr7 (2).jpg">
+</div>
+</div>    
+    </div>
+    <div class="tab-pane fade" id="contact" >tôi là messi</div>
+  </div>
+    </div>
+      </body>
+
+    </html>
+    
+      <script
+        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"
+      ></script>
+      <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"
+      ></script>
+   
+  </body>
+</html>
