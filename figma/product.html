@@ -14,7 +14,7 @@
         integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="./product.css">
     
 </head>
 
@@ -63,7 +63,7 @@
                                     <div class="item-product-cart">
                                         <div class="item-product-left">
                                             <div style="width: 110px">
-                                                <img class="item-product-img" src="./image 66.png" alt="">
+                                                <img class="item-product-img" src="./img/image 66.png" alt="">
                                             </div>
                                             <div class="item-product-text" style="margin-left: 20px;">
                                                 <p>Way Kambas Mini Ebony</p>
@@ -96,7 +96,7 @@
                                     <div class="item-product-cart">
                                         <div class="item-product-left">
                                             <div style="width: 110px">
-                                                <img class="item-product-img" src="./img10.png" alt="">
+                                                <img class="item-product-img" src="./img/img10.png" alt="">
                                             </div>
                                             <div class="item-product-text" style="margin-left: 20px;">
                                                 <p>Way Kambas Mini Ebony</p>
@@ -162,27 +162,29 @@
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
             integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
             crossorigin="anonymous"></script>
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
         <script >
          const $ = document.querySelector.bind(document);
 
-
+       
 
 let modal = $(".modal-cart")
-
-
-$(".incon-delete-modal").onclick = function() {
-    modal.classList.remove("open")
-}
 
 
 $(".cart-border").onclick = function () {
     modal.classList.add("open")
 }
+$(".incon-delete-modal").onclick = function() {
+    modal.classList.remove("open")
+}
+
+
 
 $(".modal-cantainer").onclick = function(e) {
     e.stopPropagation()
 }
-
+    
         </script>
 </body>
 

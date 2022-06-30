@@ -1,0 +1,623 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <title>Document</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <style>
+      .logo-img {
+        width: 130px;
+      }
+
+      .navbar-light .navbar-nav .nav-link {
+        color: white;
+      }
+
+      .navbar-light .navbar-nav .nav-link:hover {
+        color: #9b8495;
+      }
+
+      .bi-cart3 {
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+      }
+
+      .tab {
+        font-size: 1.2rem;
+        position: sticky;
+        top: 20px;
+      }
+
+      .navbar {
+        background: #30598c;
+      }
+
+      .avatar {
+        height: 32px;
+        width: 32px;
+        border-radius: 50%;
+        cursor: pointer;
+      }
+
+      .contai {
+        max-width: 1200px;
+        padding: 40px 20px 20px;
+        margin: 0 auto;
+      }
+
+      .navbar-nav {
+        align-items: center;
+      }
+
+      @media (max-width: 767px) {
+        .input-search {
+          width: 80% !important;
+        }
+      }
+
+      @media (max-width: 1366px) {
+        .logo-img {
+          width: 100px;
+        }
+      }
+
+      @media (min-width: 992px) {
+        .navbar-expand-lg .navbar-nav {
+          font-size: 14px;
+        }
+      }
+
+      .product {
+        margin-top: 30px;
+      }
+
+      .input-search {
+        position: relative;
+        width: 40%;
+      }
+
+      #search:focus {
+        border: 3px solid #80bdff;
+      }
+
+      #search {
+        padding: 6px 30px 6px 12px;
+        width: 100%;
+        border: none;
+        outline: none;
+        border-radius: 6px;
+      }
+
+      .form-check-input {
+        border: 2px solid #0d6efd;
+      }
+
+      .search {
+        position: absolute;
+        top: 7px;
+        right: 13px;
+        background: transparent;
+      }
+
+      .card {
+        height: 100%;
+      }
+
+      footer {
+        background: #30598c;
+        padding: 30px 0;
+      }
+
+      .footer {
+        margin: 0 auto;
+        color: white;
+        line-height: 2em;
+      }
+
+      .col-md-3.col-sm-6 > ul > li {
+        list-style: none;
+      }
+
+      .col-md-3.col-sm-6 > ul > li > a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .col-md-3.col-sm-6 > ul > li > a:hover {
+        text-decoration: underline;
+      }
+
+      b,
+      strong {
+        font-weight: normal;
+        font-size: 19px;
+      }
+
+      .message {
+        position: fixed;
+        right: 36px;
+        bottom: 50px;
+        width: 60px;
+        height: 60px;
+        background-color: #0084ff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 60px;
+        z-index: 99;
+      }
+
+      .content {
+        z-index: 99;
+        position: fixed;
+        right: 36px;
+        bottom: 126px;
+        font-size: 17px;
+        line-height: 22px;
+        text-align: left;
+        background: white;
+        height: auto;
+        width: 250px;
+        padding: 8px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px #dee2e6;
+      }
+
+      /* .content::after {
+          content: "e404";
+          font-family: 'FontAwesome';
+          position: absolute;
+          width: 30px;
+          height: 30px;
+          background: #f8f9fa;
+          top: -12px;
+          right: -7px;
+          border-radius: 50%;
+          box-shadow: 0px 1px 2px;
+        } */
+      .content-icon {
+        position: absolute;
+        width: 26px;
+        height: 26px;
+        background: #f8f9fa;
+        top: -12px;
+        right: -7px;
+        border-radius: 50%;
+        justify-content: center;
+        box-shadow: 0px 1px 2px;
+        align-items: center;
+        display: flex;
+      }
+      .content-icon i {
+        font-size: 1.5em;
+        color: #000;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="message">
+      <svg width="36" height="36" viewBox="0 0 36 36">
+        <path
+          fill="white"
+          d="M1 17.99C1 8.51488 8.42339 1.5 18 1.5C27.5766 1.5 35 8.51488 35 17.99C35 27.4651 27.5766 34.48 18 34.48C16.2799 34.48 14.6296 34.2528 13.079 33.8264C12.7776 33.7435 12.4571 33.767 12.171 33.8933L8.79679 35.3828C7.91415 35.7724 6.91779 35.1446 6.88821 34.1803L6.79564 31.156C6.78425 30.7836 6.61663 30.4352 6.33893 30.1868C3.03116 27.2287 1 22.9461 1 17.99ZM12.7854 14.8897L7.79161 22.8124C7.31238 23.5727 8.24695 24.4295 8.96291 23.8862L14.327 19.8152C14.6899 19.5398 15.1913 19.5384 15.5557 19.8116L19.5276 22.7905C20.7193 23.6845 22.4204 23.3706 23.2148 22.1103L28.2085 14.1875C28.6877 13.4272 27.7531 12.5704 27.0371 13.1137L21.673 17.1847C21.3102 17.4601 20.8088 17.4616 20.4444 17.1882L16.4726 14.2094C15.2807 13.3155 13.5797 13.6293 12.7854 14.8897Z"
+        ></path>
+      </svg>
+    </div>
+    <div class="content">
+      Xin chào! Chúng tôi có thể giúp gì cho bạn ?
+      <div class="content-icon">
+        <i class="bi bi-dash-lg"></i>
+      </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light px-3">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="text-white logo-img">
+          <img
+            src="https://techmaster.vn/resources/image/logo-techmaster/white/white_200x74.png"
+            class="img-fluid"
+            alt="..."
+          />
+        </div>
+        <div
+          class="collapse navbar-collapse d-lg-flex justify-content-end"
+          id="navbarSupportedContent"
+        >
+          <ul class="navbar-nav mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                LỘ TRÌNH 
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Javanscript</a></li>
+                <li><a class="dropdown-item" href="#">PHP</a></li>
+                <li><a class="dropdown-item" href="#">React Js</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">DOANH NGHIỆP</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                KHÓA HỌC
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Online</a></li>
+                <li><a class="dropdown-item" href="#">OfLine</a></li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">SẢN PHẨM HỌC VIÊN</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">KHAI GIẢNG </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> BLOG </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">TRẢI NGHIỆM</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="navbarDropdown"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                CHÚNG TÔI
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="#">Giảng Viên</a></li>
+                <li><a class="dropdown-item" href="#">Trung Tâm</a></li>
+              </ul>
+            </li>
+            <i class="bi bi-cart3 ms-4"></i>
+          </ul>
+        </div>
+        <img
+          src="https://techmaster.vn/resources/image/anonymous-user.jpg"
+          class="img-thumbnail avatar ms-4"
+          alt="..."
+        />
+      </div>
+    </nav>
+
+    <div class="contai">
+      <div class="row">
+        <div class="col-xl-2 d-none d-xl-block">
+          <div class="tab">
+            <strong class="pb-3 d-flex"> Chủ Đề</strong>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault1"
+              />
+              <label class="form-check-label" for="flexRadioDefault1">
+                Công Nghệ Phần Mềm
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Khóa Học văn Bản
+              </label>
+            </div>
+            <div class="form-check mb-3">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="flexRadioDefault"
+                id="flexRadioDefault2"
+              />
+              <label class="form-check-label" for="flexRadioDefault2">
+                Kháo FrontEnd
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xl-10 col-md-12">
+          <div class="input-search text-muted shadow">
+            <input type="text" id="search" placeholder="Tìm kiếm" />
+
+            <i class="bi bi-search search"></i>
+          </div>
+          <div class="row gy-4 gx-4 product">
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="	https://media.techmaster.vn/api/fileman/Uploads/Docker/docker-cover.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">Docker qua ví dụ thực tế</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      5
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="https://media.techmaster.vn/api/static/10194/bv7f8ms51coduae6ij60"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Javascript căn bản - Tổng hợp 12 game huyền thoại
+                  </p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      2
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="	https://media.techmaster.vn/api/fileman/Uploads/Java/banner-javabasic.png"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">Javanscript cơ bản</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      3.1
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="https://media.techmaster.vn/api/static/bub3enc51co7s932dsk0/bKnWt9ab"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">
+                    Lập trình di động đa nền tảng React Native Online (cập nhật
+                    2022)
+                  </p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      4.5
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="	https://media.techmaster.vn/api/static/8028/bqa348s51cocm3n1ubq0"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">Lập trình di động IOS Swift online</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      5
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="https://media.techmaster.vn/api/static/8028/bqeg1qs51co5pe1n46j0"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">PYTHON CƠ BẢN</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      4.9
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="https://media.techmaster.vn/api/static/6734/blnou5k51coaro0uga1g"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">PYTHON CƠ BẢN</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      4.9
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="	https://media.techmaster.vn/api/fileman/Uploads/logo/Linux.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">PYTHON CƠ BẢN</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      4.9
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-sm-6">
+              <div class="card shadow">
+                <img
+                  src="https://media.techmaster.vn/api/fileman/Uploads/Docker/docker-cover.jpg"
+                  class="card-img-top"
+                  alt="..."
+                />
+                <div class="card-body">
+                  <p class="card-text">PYTHON CƠ BẢN</p>
+                  <p class="text-muted d-flex justify-content-between">
+                    Trực tuyến
+                    <span>
+                      4.9
+                      <i class="bi bi-star-fill text-warning"></i>
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <div class="row footer">
+        <div class="col-md-3 col-sm-6">
+          <ul>
+            <li><strong>CHỦ SỞ HỮU WEBSITE</strong></li>
+            <li><a href="#">Công ty TNHH TechMaster Vietnam Ltd</a></li>
+            <li>Số ĐKDN: 0105392153</li>
+            <li>Ngày cấp: 4-7-2011</li>
+            <li>Nơi cấp: Sở kế hoạch - đầu tư Hà nội</li>
+            <li>Người đại diện pháp luật: Lê Minh Thu</li>
+            <li>Phụ trách nội dung: Trịnh Minh Cường</li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <ul>
+            <li>
+              <a href="#"> <strong>GIỚI THIỆU</strong></a>
+            </li>
+            <li><a href="#">Học viện CNTT TechMaster</a></li>
+            <li><a href="#">Giảng viên</a></li>
+            <li><a href="#">Quy định</a></li>
+            <li><a href="#">Hướng dẫn mua khóa học</a></li>
+            <li><a href="#">Ưu đãi và hoàn trả học phí</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <ul>
+            <li><strong>TƯ VẤN TUYỂN SINH</strong></li>
+            <li>Tư vấn viên :</li>
+            <li><a href="#">Phạm Thị Mẫn - 0963023185</a></li>
+            <li><a href="#">manpham@techmaster.vn</a></li>
+            <li><a href="#">Dương Đức Thịnh - 0987273764</a></li>
+            <li><a href="#">thinh@techmaster.vn</a></li>
+            <li><a href="#">Tư vấn đào tạo doanh nghiệp: 090 220 9011</a></li>
+            <li><a href="#">cuong@techmaster.vn</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <ul>
+            <li><strong>ĐỊA CHỈ</strong></li>
+            <li><a href="">Cơ sở Tố Hữu: Tầng 12A, tòa nhà Viwaseen</a></li>
+            <li>
+              <a href="">Tower, số 48, Tố Hữu, Lê Văn Lương kéo dài, Hà Nội</a>
+            </li>
+            <li><a href="">Cơ sở Nguyễn Đình Chiểu: 14 ngõ 4,</a></li>
+            <li><a href="">Nguyễn Đình Chiểu, Quận Hai Bà Trưng, Hà Nội</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var message = document.querySelector(".message");
+      var message1 = document.getElementsByClassName("message");
+      console.log(message);
+      console.log(message1);
+
+      message.onclick = function (e) {
+        console.log(e);
+        alert("Hello  world");
+      }
+    </script>
+  </body>
+</html>
